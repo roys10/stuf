@@ -19,6 +19,11 @@ def compress(path):
             counter = np.count_nonzero(i == value)
             if not (f"{value}*{counter}" in tmp):
                 tmp.append(f"{value}*{counter}")
+
+            # if counter == 1: this is in order to save values which their counter is 1 without the *1
+            #     tmp.append(f"{value}")
+            # else:
+            #     tmp.append(f"{value}*{counter}")
             # print(i, counter)
         comped.append(tmp)
     return comped
